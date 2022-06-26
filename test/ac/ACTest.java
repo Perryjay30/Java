@@ -21,28 +21,27 @@ class ACTest {
             Assertions.assertEquals(result, "on");
         }
 
-     @Test
-    public void test_isOnIsInvalid() throws Exception {
+        @Test
+        public void test_isOnIsInvalid() throws Exception {
             String isOn = dynamic.isOn("ppppp");
-
             Assertions.assertEquals(isOn, "ppppp");
      }
 
-    @Test
-    public void test_isOff() throws Exception {
-        String result = dynamic.isOff("off");
-        Assertions.assertEquals(result, "off");
+        @Test
+        public void test_isOff() throws Exception {
+            String result = dynamic.isOff("off");
+            Assertions.assertEquals(result, "off");
     }
 
 
-    @Test
-    public void test_increaseTemp() throws Exception {
+        @Test
+        public void test_increaseTemp() throws Exception {
             int result = dynamic.increaseTemp(20);
             Assertions.assertEquals(result, 20);
     }
 
-    @Test
-    public void test_decreaseTemp() throws Exception {
+        @Test
+        public void test_decreaseTemp() throws Exception {
             int result = dynamic.decreaseTemp(16);
             Assertions.assertEquals(result, 16);
     }
