@@ -40,9 +40,21 @@ class ACTest {
             Assertions.assertEquals(result, 20);
     }
 
+    @Test
+    public void test_increaseTempInvalid() throws Exception {
+        int result = dynamic.increaseTemp(40);
+        Assertions.assertEquals(result, 40);
+    }
         @Test
         public void test_decreaseTemp() throws Exception {
             int result = dynamic.decreaseTemp(16);
             Assertions.assertEquals(result, 16);
     }
+
+    @Test
+    public void test_decreaseTempInvalid() throws Exception {
+        int result = dynamic.decreaseTemp(1);
+        Assertions.assertEquals(result, 1);
+    }
+
 }

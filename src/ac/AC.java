@@ -1,5 +1,7 @@
 package ac;
 
+import com.sun.security.jgss.GSSUtil;
+
 import java.util.Objects;
 
 public class AC {
@@ -18,6 +20,9 @@ public class AC {
         public String isOff(String off) throws Exception {
             if (Objects.equals(off, "off")) {
                 System.out.println("Ac is off");
+            } else {
+                throw new Exception("Kindly turn off properly");
+
             }
 
             return off;
@@ -25,7 +30,8 @@ public class AC {
 
         public int increaseTemp(int temp) throws Exception {
         if (temp > 30){
-            throw new Exception("invalid temp.");
+           // throw new Exception("invalid temp.");
+            temp = 30;
         }
         else {
             System.out.println("Temperature has increased to: " + temp);
@@ -36,7 +42,8 @@ public class AC {
 
     public int decreaseTemp(int temp) throws Exception {
         if (temp < 16){
-            throw new Exception("invalid temp.");
+            //throw new Exception("invalid temp.");
+            temp = 16;
         }
         else {
             System.out.println("Temperature has decreased to: " + temp);
@@ -44,6 +51,12 @@ public class AC {
         return temp;
 
     }
+
+
+//    public int fixedGearNumber(){
+//        return 0;
+//    }
+
 }
 
 
