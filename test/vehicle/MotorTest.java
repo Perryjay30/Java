@@ -41,5 +41,12 @@ class MotorTest {
         Assertions.assertEquals(variable, 124);
     }
 
+    @Test
+    public void test_gearOfCar() throws Exception {
+        int result = honda.gearOfCar(2,19);
+        Assertions.assertEquals(result, 19);
+
+    }
+
 
 }
