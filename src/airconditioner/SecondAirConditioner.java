@@ -1,6 +1,6 @@
 package airconditioner;
 
-public class AirConditioner {
+public class SecondAirConditioner {
 
     public String isOn(String isOn) {
         System.out.print("the AC is on");

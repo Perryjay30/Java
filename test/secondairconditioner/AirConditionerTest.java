@@ -1,18 +1,17 @@
-package airconditioner;
+package secondairconditioner;
 
+import airconditioner.SecondAirConditioner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AirConditionerTest {
 
-    AirConditioner love;
+    SecondAirConditioner love;
 
     @BeforeEach
     public void initialSetUp(){
-        love = new AirConditioner();
+        love = new SecondAirConditioner();
     }
 
     @Test
