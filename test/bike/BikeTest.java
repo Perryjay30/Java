@@ -30,23 +30,11 @@ class BikeTest {
         Assertions.assertEquals(gearResult, 3);
     }
 
-    @Test
-    public void test_accelerateGearOneIsInvalid() throws Exception {
-        int gearResult = nissian.accelerateGearOne(1, 19);
-        Assertions.assertEquals(gearResult, 19);
-    }
-
 
     @Test
-    public void test_acelerateGearTwo() throws Exception {
+    public void test_accelerateGearTwo() throws Exception {
         int gearResult = nissian.decelerateGearTwo(2, 25);
         Assertions.assertEquals(gearResult, 27);
-    }
-
-    @Test
-    public void test_accelerateGearTwoInvalid() throws Exception {
-        int gearResult = nissian.decelerateGearTwo(3, 25);
-        Assertions.assertEquals(gearResult, 26);
     }
 
 
@@ -57,34 +45,17 @@ class BikeTest {
     }
 
     @Test
-    public void test_accelerateGearThreeInvalid() throws Exception {
-        int gearResult = nissian.accelerateGearThree(8, 28);
-        Assertions.assertEquals(gearResult, 18);
-    }
-
-    @Test
     public void test_accelerateGearFour() throws Exception {
         int gearResult = nissian.accelerateGearFour(4, 46);
         Assertions.assertEquals(gearResult, 50);
     }
 
-    @Test
-    public void test_accelerateGearFourInvalid() throws Exception {
-        int gearResult = nissian.accelerateGearFour(6, 12);
-        Assertions.assertEquals(gearResult, 18);
-    }
 
 
     @Test
     public void test_decelerateGearOne() throws Exception {
-        int gearResult = nissian.decelerateGearOne(1, 25);
-        Assertions.assertEquals(gearResult, 24);
-    }
-
-    @Test
-    public void test_decelerateGearOneInvalid() throws Exception {
-        int gearResult = nissian.decelerateGearOne(1, 25);
-        Assertions.assertEquals(gearResult, 35);
+        int gearResult = nissian.decelerateGearOne(1, 22);
+        Assertions.assertEquals(gearResult, 21);
     }
 
 
@@ -95,32 +66,16 @@ class BikeTest {
     }
 
     @Test
-    public void test_decelerateGearTwoInvalid() throws Exception {
-        int gearResult = nissian.decelerateGearTwo(2, 25);
-        Assertions.assertEquals(gearResult, 29);
-    }
-
-    @Test
     public void test_decelerateGearThree() throws Exception {
-        int gearResult = nissian.decelerateGearThree(3, 33);
-        Assertions.assertEquals(gearResult, 30);
+        int gearResult = nissian.decelerateGearThree(3, 37);
+        Assertions.assertEquals(gearResult, 34);
     }
 
-    @Test
-    public void test_decelerateGearThreeInvalid() throws Exception {
-        int gearResult = nissian.decelerateGearThree(3, 33);
-        Assertions.assertEquals(gearResult, 30);
-    }
+
 
     @Test
     public void test_decelerateGearFour() throws Exception {
         int gearResult = nissian.decelerateGearFour(4, 45);
         Assertions.assertEquals(gearResult, 41);
-    }
-
-    @Test
-    public void test_decelerateGearFourInvalid() throws Exception {
-        int gearResult = nissian.decelerateGearFour(3, 33);
-        Assertions.assertEquals(gearResult, 30);
     }
 }
