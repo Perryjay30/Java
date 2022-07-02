@@ -7,6 +7,7 @@ public class UnicornOil {
     private  double totalCharges;
 
     public void setQuantityPurchased(int litrePurchased){
+
         this.litrePurchased = litrePurchased;
     }
     public double getPercentageDiscount(){
