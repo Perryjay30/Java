@@ -4,19 +4,22 @@ public class PatternA {
 
     public static void main(String[] args) {
 
-        for (int row = 1; row >= 1;) {
-            for (int space = 1; space > row; ) {
+        for (int row = 6; row >= 1;) {
+            for(int space = 6; space < row;) {
                 System.out.print("  ");
-                space++;
+                space--;
             }
+
             int number = 1;
-            for (int num = 1; num >= row; ) {
+            for(int num = 1; num <= row;) {
                 System.out.printf("%d ", number);
-                number++;
                 num++;
+                number++;
             }
+
             System.out.println();
-            row++;
+            row--;
+
         }
     }
 }
