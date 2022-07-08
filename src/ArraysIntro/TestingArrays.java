@@ -10,7 +10,7 @@ public class TestingArrays {
         numbers[3] = 4;
         numbers[4] = 6;
 
-        for(int i = 0; i <= numbers.length; i++){
+        for(int i = 0; i < numbers.length; i++){
             System.out.println(numbers[i]);
         }
     }
