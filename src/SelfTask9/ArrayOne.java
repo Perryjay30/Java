@@ -1,7 +1,5 @@
 package SelfTask9;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class ArrayOne {
 
     public static void main(String[] args) {
