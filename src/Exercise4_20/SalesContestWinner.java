@@ -11,7 +11,7 @@ public class SalesContestWinner {
         System.out.println("Enter an integer: ");
         int number = input.nextInt();
         int counter = 0;
-        while (counter < 10) {
+        while (counter < 3) {
             System.out.println("Enter an integer: ");
             number = input.nextInt();
             counter++;
