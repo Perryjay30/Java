@@ -2,62 +2,54 @@ package Tdd_Wahala;
 
 public class AirConditioner {
 
-    private boolean isSwitchedOn;
-    private boolean isSwitchedOff;
+    private boolean isSwitchOn;
 
     public int getTemperature() {
         return temperature;
     }
 
     private int temperature = 16;
-    public boolean isSwitchedOn() {
-        return isSwitchedOn;
-    }
-
-    public boolean isSwitchedOff() {
-        return isSwitchedOff;
+    public boolean isSwitchOn() {
+        return isSwitchOn;
     }
 
     public void turnOn() {
-        isSwitchedOn = true;
+        isSwitchOn = true;
     }
 
     public void turnOff() {
-        isSwitchedOff = true;
+        isSwitchOn = false;
+        temperature = 0;
     }
 
     public int defaultTemperature() {
-        if(isSwitchedOn)
+        if(isSwitchOn)
             temperature = 16;
         else
-            temperature = 0;
+            turnOff();
 
         return temperature;
     }
 
-    public int increaseTemperature() throws Exception {
-        if (isSwitchedOff())
-            temperature = 0;
-        else if(isSwitchedOn() && temperature >= 16 && temperature < 30) {
+    public void increaseTemperature() throws Exception {
+        if(isSwitchOn && temperature >= 16 && temperature < 30) {
             temperature += 1;
         }
-        else {
-            throw new Exception("Invalid Limit");
-
+        else if(isSwitchOn && temperature > 30) {
+            temperature = 30;
+            throw new Exception("The highest temperature is 30");
         }
-        return temperature;
     }
 
-    public int decreaseTemperature() throws Exception {
-        if (isSwitchedOff())
-            temperature = 0;
-        else if(isSwitchedOn()) {
+    public void decreaseTemperature() throws Exception {
+        if(isSwitchOn && temperature > 16) {
             temperature--;
         }
-        else if(temperature < 16)
+        else if(isSwitchOn && temperature < 16) {
+            temperature = 16;
             throw new Exception("Cant go below 16");
-
-        return temperature;
-
+        }
+        else if (!isSwitchOn)
+                System.out.println("Impossible");
     }
 }

@@ -15,26 +15,26 @@ class AirConditionerTest {
 
     @Test
     void testThatAirConditionerCanBeTurnedOn() {
-       assertFalse(samsung.isSwitchedOn());
+       assertFalse(samsung.isSwitchOn());
 
        samsung.turnOn();
-       assertTrue(samsung.isSwitchedOn());
+       assertTrue(samsung.isSwitchOn());
 
     }
 
     @Test
     void testThatAirConditionerCanBeTurnedOff()  {
         samsung.turnOn();
-        assertTrue(samsung.isSwitchedOn());
+        assertTrue(samsung.isSwitchOn());
 
         samsung.turnOff();
-        assertTrue(samsung.isSwitchedOff());
+        assertFalse(samsung.isSwitchOn());
     }
 
     @Test
     void testThatAirConditionerHasDefaultTemperatureWhenSwitchedOn() {
         samsung.turnOn();
-        assertTrue(samsung.isSwitchedOn());
+        assertTrue(samsung.isSwitchOn());
 
         samsung.defaultTemperature();
         assertEquals(16, samsung.defaultTemperature());
@@ -42,7 +42,7 @@ class AirConditionerTest {
 
     @Test
     void testTHatAirConditionerHasNoDefaultTemperatureWhenSwitchedOff() {
-     assertFalse(samsung.isSwitchedOn());
+     assertFalse(samsung.isSwitchOn());
      assertEquals(0, samsung.defaultTemperature());
     }
 
@@ -62,10 +62,9 @@ class AirConditionerTest {
     @Test
     void testThatTemperatureCantBeIncreasedWhenSwitchedOff() throws Exception {
         samsung.turnOff();
-        assertTrue(samsung.isSwitchedOff());
+        assertFalse(samsung.isSwitchOn());
         assertEquals(0, samsung.defaultTemperature());
 
-        assertFalse(samsung.isSwitchedOn());
         samsung.increaseTemperature();
         assertEquals(0, samsung.getTemperature());
     }
@@ -80,19 +79,9 @@ class AirConditionerTest {
         }
         assertEquals(29, samsung.getTemperature());
         samsung.increaseTemperature();
-//        samsung.increaseTemperature();
+        samsung.increaseTemperature();
         assertEquals(30, samsung.getTemperature());
-    }
-
-    @Test
-    void testThatTemperatureCantBeDecreasedWhenSwitchedOff() throws Exception {
-        samsung.turnOff();
-        assertTrue(samsung.isSwitchedOff());
-        assertEquals(0, samsung.defaultTemperature());
-
-        assertFalse(samsung.isSwitchedOn());
-        samsung.decreaseTemperature();
-        assertEquals(0, samsung.getTemperature());
+        System.out.println("The highest temperature is 30");
     }
 
     @Test
@@ -108,6 +97,28 @@ class AirConditionerTest {
         samsung.decreaseTemperature();
         samsung.decreaseTemperature();
         assertEquals(17, samsung.getTemperature());
+    }
+
+    @Test
+    void testThatTemperatureCantBeDecreasedWhenSwitchedOff() throws Exception {
+        samsung.turnOff();
+        assertEquals(0, samsung.defaultTemperature());
+
+        samsung.decreaseTemperature();
+        assertEquals(0, samsung.getTemperature());
+    }
+
+    @Test
+    void testThatTemperatureCantBeDecreasedBelow16() throws Exception {
+        samsung.turnOn();
+        assertEquals(16, samsung.defaultTemperature());
+        samsung.increaseTemperature();
+        assertEquals(17, samsung.getTemperature());
+
+        samsung.decreaseTemperature();
+        samsung.decreaseTemperature();
+        assertEquals(16, samsung.getTemperature());
+        System.out.println("Cant go below 16");
     }
 
 
