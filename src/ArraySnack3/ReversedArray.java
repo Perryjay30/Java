@@ -1,22 +1,18 @@
 package ArraySnack3;
 
+import java.util.Arrays;
+
 public class ReversedArray {
     public boolean arrayIsFull() {
         return true;
     }
-    public short arrayReversal(int[] arrayC) {
-        for (int i = 0; i < arrayC.length; i++) {
-            for (int j = i + 1; j < arrayC.length; j++) {
-                int tempValue = 0;
-                if (arrayC[i] < arrayC[j]) {
-                    tempValue = arrayC[i];
-                    arrayC[i] = arrayC[j];
-                    arrayC[j] = tempValue;
-                }
-            }
+
+    public static int arrayReversal(int[] arrayC) {
+        for (int j = arrayC.length - 1; j > -1; j--) {
+            System.out.print(" " + arrayC[j]);
         }
-        for(int num : arrayC)
-            System.out.print(num + " ");
         return 0;
     }
 }
+
+

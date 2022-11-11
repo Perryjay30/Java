@@ -24,7 +24,7 @@ class ReversedArrayTest {
         int[] arrayC = {45, 78, 90, 23, 56, 10, 49, 32, 77};
         assertTrue(selection.arrayIsFull());
 
-        assertEquals(0,selection. arrayReversal(arrayC));
+        assertEquals(0, ReversedArray.arrayReversal(arrayC));
     }
 
 }
